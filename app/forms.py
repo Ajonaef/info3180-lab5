@@ -5,6 +5,9 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms.validators import DataRequired, Length
 
 class MovieForm(FlaskForm):
+    class Meta:
+        csrf = False
+        
     title = StringField(
         'Movie Title',
         validators=[
